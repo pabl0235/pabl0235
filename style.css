@@ -48,6 +48,13 @@ a:hover {
 }
 
 /* Hero Section */
+.profile-pic {
+  width: 200px;       /* adjust as you like */
+  height: 200px;      /* keep same as width */
+  object-fit: cover;  /* crop the image instead of squishing */
+  border-radius: 50%; /* makes it circular */
+}
+
 .hero {
   height: 80vh;
   display: flex;
