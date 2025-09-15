@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">MyPortfolio</h1>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#personal">Personal</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="w-full text-center">
+      <img id="pablo-image" style="border-radius:50%;" onclick="iterateClickCount()" src="img/Profile_Photo.jpg" alt="Photo of Pablo Mojica" class="cursor-pointer xl:mt-10 inline-block animate__animated animate__fadeIn delay2 border-gray-900 duration-300 ease hover:border-green-400 shadow-md border-8 h-80 w-80 md:w-96 md:h-96 inline-block">
+    </div>
+    <h2>Hello, I'm <span class="highlight">Pablo Mojica</span></h2>
+    <p>Mechatronics Engineer | Tech Enthusiast | Lifelong Learner</p>
+    <a href="#projects" class="btn">See My Work</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>Short intro about who you are, your goals, and your passion for technology.</p>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>Company Name</strong> – Role (Year – Year)</li>
+      <li><strong>Skills:</strong> C, Python, C#, etc.</li>
+    </ul>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Project 1</h3>
+        <p>Brief description of your project.</p>
+        <a href="#">View More</a>
+      </div>
+      <div class="card">
+        <h3>Project 2</h3>
+        <p>Brief description of your project.</p>
+        <a href="#">View More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal -->
+  <section id="personal" class="section">
+    <h2>Personal Space</h2>
+    <p>My favorite music, movies, and photography.</p>
+    <p>(Here you can later connect Spotify API or add a photo gallery.)</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+    <p>Connect with me:</p>
+    <ul>
+      <li><a href="https://github.com/yourusername">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/yourusername">LinkedIn</a></li>
+      <li><a href="mailto:youremail@example.com">Email</a></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 [Your Name] | Built with ❤️</p>
+  </footer>
+</body>
+</html>
