@@ -111,6 +111,33 @@ a:hover {
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
+.contact-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.contact-links li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.contact-links li a:hover {
+  color: #0077b5; /* LinkedIn blue, looks nice */
+}
+
+.contact-links i {
+  font-size: 1.4rem;
+}
+
+
 /* Footer */
 footer {
   text-align: center;
