@@ -69,6 +69,13 @@ a:hover {
   color: #00bcd4;
 }
 
+.hero-buttons {
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  gap: 1rem;                /* space between buttons */
+  margin-top: 1rem;
+}
+
 .btn {
   display: inline-block;
   margin-top: 20px;
