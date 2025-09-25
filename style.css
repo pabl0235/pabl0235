@@ -2,21 +2,22 @@
 
 @font-face {
   font-family: 'Inter';
-  src: url('assets/fonts/Inter_18pt-Regular.ttf') format('truetype');
-  font-weight: 400;
+  src: url('assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;   /* supports all weights */
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Inter';
-  src: url('assets/fonts/Inter_18pt-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
+  src: url('assets/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
 }
 
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
+  font-weight: 400;
   background-color: #121212;
   color: #e0e0e0;
   line-height: 1.6;
@@ -24,6 +25,7 @@ body {
 
 h1, h2, h3 {
   margin-bottom: 10px;
+  font-weight: 600;
 }
 
 a {
