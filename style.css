@@ -1,50 +1,83 @@
-/* Global Styles */
-
-@font-face {
-  font-family: 'Inter';
-  src: url('assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
-  font-weight: 100 900;   /* supports all weights */
-  font-style: normal;
+/* ------------------------------------------- */
+/* 1. CONFIGURATION / CUSTOM PROPERTIES */
+/* ------------------------------------------- */
+:root {
+  --primary-color: #00bcd4;
+  --text-color: #e0e0e0;
+  --bg-color: #121212;
+  --bg-secondary: #1e1e1e;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 2rem;
 }
 
+/* ------------------------------------------- */
+/* 2. GLOBAL / FONT-FACE */
+/* ------------------------------------------- */
+
 @font-face {
   font-family: 'Inter';
-  src: url('assets/fonts/inter/Inter-Italic-VariableFont_opsz,wght.ttf') format('truetype');
+  /* Load WOFF2 first for performance */
+  src: url('assets/fonts/inter/Inter-VariableFont_opsz,wght.ttf') format('truetype'); /* Fallback */
   font-weight: 100 900;
-  font-style: italic;
+  font-style: normal;
+  font-display: swap; /* Best practice for font loading */
+}
+
+/* ------------------------------------------- */
+/* 3. BASE STYLES */
+/* ------------------------------------------- */
+
+*, *::before, *::after {
+  box-sizing: border-box; /* Good practice for box model control */
 }
 
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  background-color: #121212;
-  color: #e0e0e0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
 }
 
-/* Make text flexible */
-h1 {
-  font-size: clamp(1.8rem, 5vw, 3rem); /* scales with screen */
-}
-h2 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
-}
-h3 {
-  font-size: clamp(1.2rem, 3.5vw, 2rem);
+/* Reset for all images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Prevents tiny margin under images */
 }
 
+/* Make text flexible */
+h1 { font-size: clamp(1.8rem, 5vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+h3 { font-size: clamp(1.2rem, 3.5vw, 2rem); }
+
 h1, h2, h3 {
-  margin-bottom: 0.625rem;
+  /* Use relative units for spacing */
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm); /* ~0.5rem (8px) or use 0.625rem (10px) */
+  font-weight: 600;
 }
 
 a {
-  color: #00bcd4;
+  color: var(--primary-color);
   text-decoration: none;
+  transition: color 0.3s; /* Smooth transitions on hover */
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+/* ------------------------------------------- */
+/* 4. LAYOUT / COMPONENTS (Mobile First) */
+/* ------------------------------------------- */
+
+.section {
+  padding: var(--spacing-lg) var(--spacing-md); /* 2rem top/bottom, 1rem left/right */
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 /* Navbar */
@@ -52,8 +85,8 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background: #1e1e1e;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--bg-secondary);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -75,6 +108,15 @@ a:hover {
 }
 
 /* Hero Section */
+.hero {
+  min-height: 80vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+}
 
 /* Make images scale nicely */
 img, .profile-pic {
@@ -89,34 +131,24 @@ img, .profile-pic {
   border-radius: 50%; /* makes it circular */
 }
 
-.hero {
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
 .hero .highlight {
   color: #00bcd4;
 }
 
+/* Buttons */
 .hero-buttons {
   display: flex;
-  justify-content: center;  /* center horizontally */
-  margin-top: 1rem;
-  flex-direction: column; /* stack on small screens */
-  gap: 0.8rem;            /* space between buttons */
+  justify-content: center;
+  flex-direction: column; /* Stack on mobile */
+  margin-top: var(--spacing-md); 
+  gap: var(--spacing-md); 
 }
 
 .btn {
   display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #00bcd4;
-  color: #121212;
+  padding: 0.625rem 1.25rem; /* 10px 20px, using rem */
+  background: var(--primary-color);
+  color: var(--bg-color); /* Contrast text color */
   border-radius: 5px;
   transition: 0.3s;
   width: 100%; /* full width on small screens */
@@ -169,6 +201,7 @@ img, .profile-pic {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  justify-content: center; 
 }
 
 .card {
@@ -212,7 +245,6 @@ img, .profile-pic {
   font-size: 1.4rem;
 }
 
-
 /* Footer */
 footer {
   text-align: center;
@@ -221,6 +253,9 @@ footer {
   margin-top: 20px;
 }
 
+/* ------------------------------------------- */
+/* 5. MEDIA QUERIES (Mobile-First - ascending) */
+/* ------------------------------------------- */
 /* Tablets (≥768px) */
 @media (min-width: 768px) {
   /* Navbar */
@@ -259,7 +294,7 @@ footer {
 @media (min-width: 1024px) {
   /* Cards: 3 columns */
   .cards {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
   }
 
   /* Hero text bigger */
