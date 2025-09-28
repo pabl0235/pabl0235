@@ -8,11 +8,26 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
+<script>
+  const menuBtn = document.querySelector('.menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuBtn.innerHTML = navLinks.classList.contains('active') 
+      ? '<i class="fas fa-times"></i>'  // change to X when open
+      : '<i class="fas fa-bars"></i>'; // hamburger when closed
+  });
+</script>
 <body>
   <!-- Navigation -->
   <header>
     <nav class="navbar">
       <h1 class="logo">MyPortfolio</h1>
+      <!-- Menu Button (visible on mobile only) -->
+      <button class="menu-btn" aria-label="Toggle Menu">
+        <i class="fas fa-bars"></i>
+      </button>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>

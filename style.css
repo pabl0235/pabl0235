@@ -23,9 +23,19 @@ body {
   line-height: 1.6;
 }
 
+/* Make text flexible */
+h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem); /* scales with screen */
+}
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+h3 {
+  font-size: clamp(1.2rem, 3.5vw, 2rem);
+}
+
 h1, h2, h3 {
-  margin-bottom: 10px;
-  font-weight: 600;
+  margin-bottom: 0.625rem;
 }
 
 a {
@@ -65,6 +75,13 @@ a:hover {
 }
 
 /* Hero Section */
+
+/* Make images scale nicely */
+img, .profile-pic {
+  max-width: 100%;
+  height: auto;
+}
+
 .profile-pic {
   width: 200px;       /* adjust as you like */
   height: 200px;      /* keep same as width */
@@ -79,7 +96,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 20px;
+  padding: 2rem 1rem;
 }
 
 .hero .highlight {
@@ -89,8 +106,9 @@ a:hover {
 .hero-buttons {
   display: flex;
   justify-content: center;  /* center horizontally */
-  gap: 1rem;                /* space between buttons */
   margin-top: 1rem;
+  flex-direction: column; /* stack on small screens */
+  gap: 0.8rem;            /* space between buttons */
 }
 
 .btn {
@@ -101,11 +119,43 @@ a:hover {
   color: #121212;
   border-radius: 5px;
   transition: 0.3s;
+  width: 100%; /* full width on small screens */
+  max-width: 300px;
+  font-size: 1.1rem;
 }
 
 .btn:hover {
   background: #0097a7;
 }
+
+/* Mobile nav: hide links by default */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #1e1e1e;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Example hamburger (add a button in HTML) */
+.menu-btn {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #e0e0e0;
+  cursor: pointer;
+}
+
+/* Show nav links when active (add JS toggle) */
+.nav-links.active {
+  display: flex;
+}
+
 
 /* Sections */
 .section {
@@ -171,3 +221,54 @@ footer {
   margin-top: 20px;
 }
 
+/* Tablets (≥768px) */
+@media (min-width: 768px) {
+  /* Navbar */
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+  .menu-btn { display: none; }
+
+  /* Hero buttons side by side */
+  .hero-buttons {
+    flex-direction: row;
+  }
+  .btn {
+    width: auto;
+  }
+
+  /* Cards: 2 columns */
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contact links bigger */
+  .contact-links li a {
+    font-size: 1.2rem;
+  }
+  .contact-links i {
+    font-size: 1.6rem;
+  }
+}
+
+/* Laptops / Desktop (≥1024px) */
+@media (min-width: 1024px) {
+  /* Cards: 3 columns */
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Hero text bigger */
+  h1 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+  }
+
+  .profile-pic {
+    width: 250px;
+    height: 250px;
+  }
+}
