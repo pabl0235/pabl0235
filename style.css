@@ -90,6 +90,14 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: transform 0.3s ease-out; /* Smooth movement */
+  transform: translateY(0);           /* Initial state: visible */
+}
+
+/* New CSS class for the hidden state */
+.navbar-hidden {
+    /* Push the navbar up by 100% of its own height */
+    transform: translateY(-100%);
 }
 
 .navbar .logo {
