@@ -49,10 +49,10 @@ if (menuBtn && navLinks) {
     // Default to system preference
     if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
       root.setAttribute('data-theme', 'dark');
+      toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
     }
   }
-
-  // Toggle theme
+    
   toggleBtn.addEventListener('click', () => {
     const current = root.getAttribute('data-theme');
     const newTheme = current === 'dark' ? 'light' : 'dark';

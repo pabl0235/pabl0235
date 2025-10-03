@@ -94,9 +94,9 @@ a:hover {
 
 /* Navbar */
 .navbar {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr; /* left | center | right */
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: var(--spacing-md) var(--spacing-lg);
   background: var(--bg-secondary);
   position: sticky;
@@ -106,27 +106,41 @@ a:hover {
   transform: translateY(0);           /* Initial state: visible */
 }
 
-/* New CSS class for the hidden state */
+/* Mobile nav: hide links by default */
+.nav-links {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  right: 20px;
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-left: 0;
+  list-style: none;
+}
+
+/* Example hamburger (add a button in HTML) */
+.menu-btn {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+/* Show nav links when active (add JS toggle) */
+.nav-links.active {
+  display: flex;
+}
+
 .navbar-hidden {
     /* Push the navbar up by 100% of its own height */
     transform: translateY(-100%);
-}
-
-.navbar .logo {
-  justify-self: start;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.nav-links {
-  justify-self: end;
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links li {
-  display: inline;
 }
 
 #theme-toggle {
@@ -137,7 +151,7 @@ a:hover {
   color: var(--text-color); /* inherit theme color */
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
   padding: 0.5rem;
   transition: color 0.3s ease;
 }
@@ -194,35 +208,6 @@ img, .profile-pic {
 .btn:hover {
   background: #0097a7;
 }
-
-/* Mobile nav: hide links by default */
-.nav-links {
-  display: none;
-  flex-direction: column;
-  gap: 1rem;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background: var(--bg-secondary);
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-/* Example hamburger (add a button in HTML) */
-.menu-btn {
-  display: block;
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: var(--primary-color);
-  cursor: pointer;
-}
-
-/* Show nav links when active (add JS toggle) */
-.nav-links.active {
-  display: flex;
-}
-
 
 /* Sections */
 .section {
