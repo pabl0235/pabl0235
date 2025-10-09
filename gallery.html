@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pablo's Photo Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html#personal">← Back</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section gallery-full">
+    <h2>My Photography</h2>
+    <div class="photo-grid">
+        <img src="img/gallery/voladores-de-papantla-la-antigua-veracruz.webp" alt="voladores de papantla, la antigua, veracruz" loading="lazy">
+        <img src="img/gallery/cn-tower-toronto-canada.webp" alt="CN Tower" loading="lazy">
+        <img src="img/gallery/cn-tower-2-toronto-canada.webp" alt="CN Tower 2" loading="lazy">
+        <img src="img/gallery/cn-tower-port-toronto-canada.webp" alt="CN Tower from port" loading="lazy">
+        <img src="img/gallery/bars-bottom.webp" alt="Bars, Guadalajara" loading="lazy">
+        <img src="img/gallery/bars-between.webp" alt="Bars, Guadalajara" loading="lazy">
+    </div>
+  </section>
+
+  <footer>
+    <p>All rights reserved © 2025 Pablo Ivan Mojica Conde | Built with ❤️</p>
+  </footer>
+  <script>
+    document.querySelectorAll("img").forEach((img) => {
+    img.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+        alert("© All rights reserved. Contact for licensing.");
+    });
+    });
+  </script>
+
+</body>
+</html>

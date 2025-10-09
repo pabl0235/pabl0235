@@ -33,7 +33,7 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="w-full text-center">
-      <img id="pablo-image" style="border-radius:50%;" onclick="iterateClickCount()" src="img/profile-photo-2024.jpg" alt="Photo of Pablo Mojica" class="profile-pic">
+      <img id="pablo-image" style="border-radius:50%;" data-protected="true" onclick="iterateClickCount()" src="img/profile-photo-2024.jpg" alt="Photo of Pablo Mojica" class="profile-pic">
     </div>
     <h2>Hello, I'm <span class="highlight">Pablo Mojica</span></h2>
     <p>Mexican | Mechatronics Engineer | Attempt of photographer</p>
@@ -119,7 +119,20 @@
   <!-- Personal -->
   <section id="personal" class="section">
     <h2>Personal Space</h2>
-    <p>My favorite music, movies, and photography.</p>
+    <p>My favorite music, movies (WIP), and photography.</p>
+
+    <section id="photos" class="section gallery-preview">
+      <h2>Photography</h2>
+      <div class="photo-grid">
+        <img src="img/gallery/voladores-de-papantla-la-antigua-veracruz.webp" alt="voladores de papantla, la antigua, veracruz" loading="lazy">
+        <img src="img/gallery/cn-tower-toronto-canada.webp" alt="CN Tower" loading="lazy">
+        <img src="img/gallery/cn-tower-2-toronto-canada.webp" alt="CN Tower 2" loading="lazy">
+      </div>
+      <div class="show-more">
+        <a href="gallery.html" class="btn">See More Photos</a>
+      </div>
+    </section>
+
 
     <!-- Music -->
     <section id="music" class="section">
@@ -165,7 +178,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Pablo Ivan Mojica Conde | Built with ❤️</p>
+    <p>All rights reserved © 2025 Pablo Ivan Mojica Conde | Built with ❤️</p>
   </footer>
 </body>
 </html>

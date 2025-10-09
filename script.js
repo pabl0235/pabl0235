@@ -64,3 +64,14 @@ if (menuBtn && navLinks) {
       ? '<i class="fas fa-sun"></i>'
       : '<i class="fas fa-moon"></i>';
   });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("img").forEach((img) => {
+    img.addEventListener("contextmenu", (event) => {
+      event.preventDefault();
+      alert("© All rights reserved. Contact for licensing.");
+    });
+  });
+});
+
