@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pablo's Photo Gallery</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  crossorigin="anonymous" 
+  referrerpolicy="no-referrer" >
+  <script src="script.js" defer></script>
   
 </head>
 <body>
-  <header>
     <nav class="navbar">
-      <ul class="nav-links">
+      <ul style="list-style-type: none;"> 
         <li><a href="index.html#personal">← Back</a></li>
       </ul>
+      <button id="theme-toggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-sun"></i>
+      </button>
     </nav>
-  </header>
 
   <section class="section gallery-full">
     <h2>My Photography</h2>
