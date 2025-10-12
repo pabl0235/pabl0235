@@ -38,34 +38,34 @@ if (menuBtn && navLinks) {
     });
 }
 
+/* Theme toggle button*/
+const toggleBtn = document.getElementById('theme-toggle');
+const root = document.documentElement;
 
-  const toggleBtn = document.getElementById('theme-toggle');
-  const root = document.documentElement;
+if (toggleBtn) {
+  // 1️⃣ Load saved theme or system preference
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const currentTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
 
-  // Load saved theme (from localStorage)
-  if (localStorage.getItem('theme')) {
-    root.setAttribute('data-theme', localStorage.getItem('theme'));
-  } else {
-    // Default to system preference
-    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      root.setAttribute('data-theme', 'dark');
-      toggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-    }
-  }
-    
+  root.setAttribute('data-theme', currentTheme);
+  toggleBtn.innerHTML = currentTheme === 'dark'
+    ? '<i class="fas fa-sun"></i>'
+    : '<i class="fas fa-moon"></i>';
+
+  // 2️⃣ Toggle theme on click
   toggleBtn.addEventListener('click', () => {
-    const current = root.getAttribute('data-theme');
-    const newTheme = current === 'dark' ? 'light' : 'dark';
+    const newTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     root.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
-
-    // Update icon
-    toggleBtn.innerHTML = newTheme === 'dark' 
+    toggleBtn.innerHTML = newTheme === 'dark'
       ? '<i class="fas fa-sun"></i>'
       : '<i class="fas fa-moon"></i>';
   });
+}
 
 
+/* Alert of all rights reserved when right click on images */
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("img").forEach((img) => {
     img.addEventListener("contextmenu", (event) => {
