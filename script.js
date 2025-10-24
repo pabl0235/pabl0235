@@ -75,3 +75,68 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/* === LIGHTBOX FUNCTIONALITY === */
+const galleryImages = document.querySelectorAll('.gallery-full .photo img');
+let currentIndex = 0;
+
+// Create lightbox elements dynamically
+const lightbox = document.createElement('div');
+lightbox.classList.add('lightbox');
+lightbox.innerHTML = `
+  <button class="lightbox-btn prev" aria-label="Previous image">❮</button>
+  <img src="" alt="Fullscreen view">
+  <button class="lightbox-btn next" aria-label="Next image">❯</button>
+  <button class="lightbox-close" aria-label="Close lightbox">✕</button>
+`;
+document.body.appendChild(lightbox);
+
+const lightboxImg = lightbox.querySelector('img');
+const btnPrev = lightbox.querySelector('.prev');
+const btnNext = lightbox.querySelector('.next');
+const btnClose = lightbox.querySelector('.lightbox-close');
+
+// Open lightbox
+galleryImages.forEach((img, index) => {
+  img.addEventListener('click', () => {
+    currentIndex = index;
+    openLightbox(img.dataset.full || img.src);
+  });
+});
+
+function openLightbox(src) {
+  lightboxImg.src = src;
+  lightbox.classList.add('active');
+}
+
+// Close lightbox
+btnClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox(); // click outside image closes it
+});
+
+function closeLightbox() {
+  lightbox.classList.remove('active');
+  lightboxImg.src = '';
+}
+
+// Navigation
+btnPrev.addEventListener('click', showPrev);
+btnNext.addEventListener('click', showNext);
+
+function showPrev() {
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  lightboxImg.src = galleryImages[currentIndex].dataset.full || galleryImages[currentIndex].src;
+}
+
+function showNext() {
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  lightboxImg.src = galleryImages[currentIndex].dataset.full || galleryImages[currentIndex].src;
+}
+
+// Keyboard support
+document.addEventListener('keydown', (e) => {
+  if (!lightbox.classList.contains('active')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowLeft') showPrev();
+  if (e.key === 'ArrowRight') showNext();
+});
