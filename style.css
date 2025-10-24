@@ -349,41 +349,6 @@ footer {
   color: #222;
 }
 
-/* === GALLERY GRID === */
-.gallery {
-  padding: 2rem;
-  text-align: center;
-}
-
-.gallery h2 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-
-.photo {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1rem;
-}
-
-.photo img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: inherit;
-  transition: transform 0.3s ease;
-}
-
-.photo:hover img {
-  transform: scale(1.05);
-}
-
 /* Caption hover effect */
 .caption {
   position: absolute;
