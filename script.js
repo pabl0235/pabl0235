@@ -75,6 +75,47 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// === Multiple Independent Carousels ===
+document.querySelectorAll('.carousel-container').forEach((carousel) => {
+  const track = carousel.querySelector('.carousel-track');
+  const items = carousel.querySelectorAll('.carousel-item');
+  const nextBtn = carousel.querySelector('.carousel-btn.next');
+  const prevBtn = carousel.querySelector('.carousel-btn.prev');
+
+  let index = 0;
+
+  function updateCarousel() {
+    const itemWidth = items[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${index * itemWidth}px)`;
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (index < items.length - 1) {
+      index++;
+      updateCarousel();
+    }
+  });
+
+  prevBtn.addEventListener('click', () => {
+    if (index > 0) {
+      index--;
+      updateCarousel();
+    }
+  });
+
+  window.addEventListener('resize', updateCarousel);
+
+  // Optional: swipe for mobile
+  let startX = 0;
+  track.addEventListener('touchstart', (e) => (startX = e.touches[0].clientX));
+  track.addEventListener('touchend', (e) => {
+    const endX = e.changedTouches[0].clientX;
+    if (startX - endX > 50) nextBtn.click(); // swipe left
+    if (endX - startX > 50) prevBtn.click(); // swipe right
+  });
+});
+
+
 /* === LIGHTBOX FUNCTIONALITY === */
 const galleryImages = document.querySelectorAll('.gallery-full .photo img');
 let currentIndex = 0;
