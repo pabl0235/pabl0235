@@ -209,6 +209,7 @@ img, .profile-pic {
 
 .btn:hover {
   background: #0097a7;
+  cursor: pointer;
 }
 
 /* Sections */
@@ -247,6 +248,38 @@ img, .profile-pic {
 }
 
 /* Contact */
+form {
+  max-width: 500px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-group {
+  text-align: left;
+}
+
+/* Style for the form group containing only the submit button */
+#contact-form .form-group:last-child {
+  text-align: center;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #1e1e1e;
+  color: #fff;
+  font-size: 1rem;
+}
+
+input:focus, textarea:focus {
+  border-color: #00bcd4;
+  outline: none;
+}
+
 .contact-links {
   list-style: none;
   padding: 0;
