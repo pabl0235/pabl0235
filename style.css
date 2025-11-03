@@ -200,7 +200,7 @@ img, .profile-pic {
   padding: 0.625rem 1.25rem; /* 10px 20px, using rem */
   background: var(--primary-color);
   color: var(--bg-color); /* Contrast text color */
-  border-radius: 5px;
+  border-radius: 12px;
   transition: 0.3s;
   width: 100%; /* full width on small screens */
   max-width: 300px;
@@ -279,6 +279,32 @@ input:focus, textarea:focus {
   border-color: #00bcd4;
   outline: none;
 }
+
+/* Buttons for WhatsApp */
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.whatsapp-btn {
+  background: #25D366;
+}
+
+.whatsapp-btn:hover { background: #1da851; }
 
 .contact-links {
   list-style: none;
