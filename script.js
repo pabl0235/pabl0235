@@ -115,6 +115,26 @@ document.querySelectorAll('.carousel-container').forEach((carousel) => {
   });
 });
 
+/* === CONTACT FORM == */
+const form = document.getElementById('contact-form');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = new FormData(form);
+  const res = await fetch(form.action, {
+    method: form.method,
+    body: data,
+    headers: { 'Accept': 'application/json' }
+  });
+
+  if (res.ok) {
+    alert("Message sent successfully! ✅");
+    form.reset();
+  } else {
+    alert("Oops! There was a problem sending your message.");
+  }
+});
+
 
 /* === LIGHTBOX FUNCTIONALITY === */
 const galleryImages = document.querySelectorAll('.gallery-full .photo img');
