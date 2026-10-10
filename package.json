@@ -1,0 +1,24 @@
+{
+  "name": "pabl0235",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pabl0235/pabl0235.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pabl0235/pabl0235/issues"
+  },
+  "homepage": "https://github.com/pabl0235/pabl0235#readme",
+  "devDependencies": {
+    "netlify-cli": "^27.12.0"
+  }
+}
