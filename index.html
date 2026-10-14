@@ -139,29 +139,41 @@
       <section id="music" class="section">
         <h2>Music</h2>
         <div class="carousel-section">
-        <div class="carousel-container">
-        <button class="carousel-btn prev">&#10094;</button>
-        <div class="carousel-track">
-          <div class="carousel-item"><div class="card">
-            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/47zz7sob9NUcODy0BTDvKx?utm_source=generator" width="90%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </div></div>
-          <div class="carousel-item"><div class="card">
-            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/2YZyLoL8N0Wb9xBt1NhZWg?utm_source=generator" width="90%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </div></div>
-          <div class="carousel-item"><div class="card">
-            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/1gW6pz5n1aK249L0GvfQCC?utm_source=generator" width="90%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </div></div>
-          <div class="carousel-item"><div class="card">
-            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/4q3ewBCX7sLwd24euuV69X?utm_source=generator" width="90%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </div></div>
-          <div class="carousel-item"><div class="card">
-            <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/3TVXtAsR1Inumwj472S9r4?utm_source=generator" width="90%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-          </div></div>
-        </div>
-        <button class="carousel-btn next">&#10095;</button>
+          <div class="carousel-container">
+          <button class="carousel-btn prev">&#10094;</button>
+          <div class="carousel-track">
+            <div class="carousel-item"><div class="card">
+              <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/47zz7sob9NUcODy0BTDvKx?utm_source=generator" width="90%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div></div>
+            <div class="carousel-item"><div class="card">
+              <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/2YZyLoL8N0Wb9xBt1NhZWg?utm_source=generator" width="90%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div></div>
+            <div class="carousel-item"><div class="card">
+              <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/1gW6pz5n1aK249L0GvfQCC?utm_source=generator" width="90%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div></div>
+            <div class="carousel-item"><div class="card">
+              <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/4q3ewBCX7sLwd24euuV69X?utm_source=generator" width="90%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div></div>
+            <div class="carousel-item"><div class="card">
+              <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/3TVXtAsR1Inumwj472S9r4?utm_source=generator" width="90%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div></div>
+          </div>
+          <button class="carousel-btn next">&#10095;</button>
+          </div>
+          <!-- Dynamic Spotify Top Tracks -->
+          <div class="spotify-top-tracks">
+            <h3>My Top Tracks</h3>
+            <p class="spotify-description">
+              What I've been listening to lately.
+            </p>
+
+            <div id="spotify-tracks" class="spotify-tracks-grid"
+                aria-live="polite">
+              <p>Loading my top tracks...</p>
+            </div>
+          </div>
         </div>
       </section>
-    </section>
   </section>
 
   <!-- Contact -->

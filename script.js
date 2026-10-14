@@ -201,3 +201,61 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'ArrowLeft') showPrev();
   if (e.key === 'ArrowRight') showNext();
 });
+
+/* === SPOTIFY TOP TRACKS === */
+
+async function loadSpotifyTopTracks() {
+  const tracksContainer = document.getElementById("spotify-tracks");
+
+  // Stop if this page doesn't contain the Spotify tracks section.
+  if (!tracksContainer) return;
+
+  try {
+    const response = await fetch(
+      "/.netlify/functions/spotify-top-tracks"
+    );
+
+    if (!response.ok) {
+      throw new Error(`Request failed: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    // Clear the initial loading message.
+    tracksContainer.replaceChildren();
+
+    // Create a card for each track returned by Spotify.
+    data.tracks.forEach((track) => {
+      const card = document.createElement("article");
+      card.className = "spotify-track-card";
+
+      const image = document.createElement("img");
+      image.src = track.image || "";
+      image.alt = `Album cover for ${track.album}`;
+      image.loading = "lazy";
+
+      const title = document.createElement("h4");
+      title.textContent = `${track.rank}. ${track.name}`;
+
+      const artist = document.createElement("p");
+      artist.textContent = track.artists.join(", ");
+
+      const link = document.createElement("a");
+      link.href = track.spotifyUrl;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "Listen on Spotify";
+
+      card.append(image, title, artist, link);
+      tracksContainer.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error("Unable to load Spotify tracks:", error);
+
+    tracksContainer.textContent =
+      "My tracks are temporarily unavailable. Please try again later.";
+  }
+}
+
+loadSpotifyTopTracks();
