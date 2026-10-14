@@ -664,8 +664,8 @@ footer {
   min-width: 0;
   padding: 1rem;
   border-radius: 12px;
-  background: var(--card-bg, #1e1e1e);
-  color: var(--text-color, #e0e0e0);
+  background: var(--bg-secondary);
+  color: var(--text-color);
   overflow-wrap: anywhere;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -697,7 +697,7 @@ footer {
 }
 
 .spotify-track-card a {
-  color: var(--link-color, #00bcd4);
+  color: var(--primary-color);
   font-size: 0.9rem;
   font-weight: 600;
   text-decoration: none;
