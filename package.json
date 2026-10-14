@@ -1,4 +1,3 @@
-
 {
   "name": "pabl0235",
   "version": "1.0.0",
@@ -10,5 +9,8 @@
   },
   "devDependencies": {
     "netlify-cli": "^27.12.0"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^11.1.4"
   }
 }
