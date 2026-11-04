@@ -258,4 +258,65 @@ async function loadSpotifyTopTracks() {
   }
 }
 
+/* === Letterboxd Recent Movies === */
+
+async function loadLetterboxdMovies() {
+    const container = document.getElementById("letterboxd-movies");
+
+    if (!container) return;
+
+    try {
+        const response = await fetch(
+            "/.netlify/functions/letterboxd-recent"
+        );
+
+        if (!response.ok) {
+            throw new Error("Could not load Letterboxd movies.");
+        }
+
+        const data = await response.json();
+
+        if (!data.movies || data.movies.length === 0) {
+            container.innerHTML = "<p>No recent movies found.</p>";
+            return;
+        }
+
+        container.innerHTML = data.movies.map(movie => `
+            <article class="letterboxd-movie-card">
+
+                ${movie.image ? `
+                    <img
+                        src="${movie.image}"
+                        alt="Poster of ${movie.title}"
+                        loading="lazy"
+                    >
+                ` : ""}
+
+                <div class="letterboxd-movie-info">
+                    <h4>${movie.title}</h4>
+
+                    ${movie.date ? `
+                        <p>${new Date(movie.date).toLocaleDateString()}</p>
+                    ` : ""}
+
+                    <a
+                        href="${movie.link}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View on Letterboxd
+                    </a>
+                </div>
+
+            </article>
+        `).join("");
+
+    } catch (error) {
+        console.error("Letterboxd error:", error);
+        container.innerHTML = "<p>Unable to load recent movies.</p>";
+    }
+}
+
 loadSpotifyTopTracks();
+// Load movies when the page is ready
+loadLetterboxdMovies();
