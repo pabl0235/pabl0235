@@ -124,7 +124,26 @@
   <!-- Personal -->
   <section id="personal" class="section">
     <h2>Personal Space</h2>
-    <p>My favorite music, movies (WIP), and photography.</p>
+    <p>My favorite music, photography and movies.</p>
+
+    <!-- Music -->
+      <section id="music" class="section">
+        <h2>Music</h2>
+        <div class="carousel-section">
+          <!-- Dynamic Spotify Top Tracks -->
+          <div class="spotify-top-tracks">
+            <h3>My Top Tracks</h3>
+            <p class="spotify-description">
+              What I've been listening to lately.
+            </p>
+
+            <div id="spotify-tracks" class="spotify-tracks-grid"
+                aria-live="polite">
+              <p>Loading my top tracks...</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
     <section id="photos" class="section gallery-preview">
       <h2>Photography</h2>
@@ -155,24 +174,6 @@
         </div>
     </div>
 
-    <!-- Music -->
-      <section id="music" class="section">
-        <h2>Music</h2>
-        <div class="carousel-section">
-          <!-- Dynamic Spotify Top Tracks -->
-          <div class="spotify-top-tracks">
-            <h3>My Top Tracks</h3>
-            <p class="spotify-description">
-              What I've been listening to lately.
-            </p>
-
-            <div id="spotify-tracks" class="spotify-tracks-grid"
-                aria-live="polite">
-              <p>Loading my top tracks...</p>
-            </div>
-          </div>
-        </div>
-      </section>
   </section>
 
   <!-- Contact -->
